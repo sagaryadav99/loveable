@@ -25,6 +25,7 @@ export async function userSignupController(req: Request, res: Response) {
   }
 }
 export async function userSigninController(req: Request, res: Response) {
+  console.log(req.body);
   const parsed = userZod.safeParse(req.body);
   if (!parsed.success) {
     return res.status(400).json({ message: "inputs not valid" });
